@@ -1,0 +1,48 @@
+/* *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+} */
+.form-group{
+    font-weight:600;
+}
+.sign-in{
+    margin:3rem 28rem;
+    background-image: linear-gradient(#dcf2ff, #efe6dd);
+    padding: 2rem 3rem;
+    border-radius: 2rem;
+    box-shadow: 0.6rem 0.6rem 0.6rem rgba(83, 79, 79, 0.356) ;
+
+}
+.sign-in-head{
+    text-align:center;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Montserrat Alternates', sans-serif;
+    
+}
+.sign-in-para{
+    text-align:center;
+    font-family: 'Poppins', sans-serif;
+    margin-top:1.2rem;
+}
+.sign-in-btn{
+    border-color:#fdc886;
+    background-color: #F5AC45;
+    border-radius: 2rem;
+    color:#000;
+    display: block;
+}
+.sign-in-btn:hover{
+    background-color: #f58025;
+    border-color: #f58025;
+}
+.signup-link{
+    
+}
+body{
+    background:url(backg1.jpg) ;
+    background-size: cover;
+    background-position:center;
+    background-repeat: no-repeat;
+}

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&family=Montserrat:wght@400;500;700&family=Pacifico&family=Ubuntu:wght@700&family=Poppins&display=swap" rel="stylesheet">
+    
+    <title>Authentication</title>
+    <style>
+            body{
+                background:url(https://images.unsplash.com/photo-1526786220381-1d21eedf92bf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80) ;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }    
+            .index-para{
+                position:absolute;
+                text-align:center;
+                font-family: 'Poppins', sans-serif;
+                margin:16rem 0 16rem 31.5rem;
+                font-weight: 900;
+            }
+            
+            .index-para1{
+                position:absolute;
+                text-align:center;
+                font-family: 'Poppins', sans-serif;
+                margin:19rem 0 16rem 31.5rem;
+                font-weight: 900;
+            }
+            .index-para2{
+                position:absolute;
+                text-align:center;
+                font-family: 'Poppins', sans-serif;
+                margin:21rem 0 16rem 31.5rem;
+                font-weight: 900;
+            }
+            .index-msg{
+                text-align:center;
+                font-family: 'Poppins', sans-serif;
+                margin:5rem 8rem 0rem 8rem;
+             
+            }
+        
+            .btn-link{
+                color:#000;
+                font-weight:400;
+            }
+            .btn-link:hover{
+                color: #000;
+                text-decoration: none;
+                
+            }
+            .sign-up-btn{
+                margin: 2rem 1rem;
+                padding: 0.5rem 1.6rem;
+          
+                border-color:#fdc886;
+                background-color: #F5AC45;
+                /* background-color: rgba(255, 255, 255, 0); */
+                border-radius: 1rem;
+                color:#000;
+               
+                /* display: block; */
+            }
+            .sign-up-btn:hover{
+                background-color: #f58025;
+                border-color: #f58025;
+                
+            }
+            .btns{
+                position: absolute;
+                padding:0 30rem;
+                margin-top:18rem;
+            }
+            .btns-signout{
+                position: absolute;
+                padding:0 30rem;
+                margin-top:22rem;
+            }
+            .index-logo{
+                position: absolute;
+                height: 10rem;
+                width: 20rem;
+                margin:6rem 30rem ;
+
+            }
+            /* .full{ */
+                /* background-color: red;
+                
+                height: 30rem;
+                width: 60rem;
+                margin:0 30rem;
+                padding-right: 20rem;
+            } */
+
+    </style>
+</head>
+<body>
+    <div class="full">
+        
+    {% for message in messages %}
+
+    <!-- <div class="alert alert-{{ message.tags }} alert-deissmissible fade show index-msg" role="alert" >
+        <strong class="msg">Message</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span></button>
+    </div> -->
+
+    <div class="alert alert-warning alert-dismissible fade show index-msg" role="alert">
+        <strong class="msg">Message</strong> {{ message }}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    {% endfor %}
+    
+    <!-- <img src="backg1.jpg" alt="tripify-logo"> -->
+    <a href='https://www.linkpicture.com/view.php?img=LPic63d4ada36ca6f1387647046'><img src='https://www.linkpicture.com/q/tripifyLogo-removebg.png ' alt="tripify-Logo" class='index-logo' type='image'></a>
+    <!-- <a href=""><img src="https://i.ibb.co/q1wJfS0/tripify-Logo.png" alt="tripify-Logo" class='index-logo'></a> -->
+    <!-- <img src="templates\authentication\tripifyLogo.png"> -->
+    <h3 class="index-para">Welcome To Tripify!</h3>
+    
+    {% if user.is_authenticated %}
+    <h3 class="index-para1">Hello {{ fname }}</h3>
+    <h4 class="index-para2">You're successfully logged in.</h4>
+    <div class="btns-signout">
+    <button type="submit" class="btn btn-primary btn-lg sign-up-btn"> <a href="/signout" class="btn-link" >Signout</a></button>
+    </div>
+    {% else %}
+    <div class="btns">
+        <button type="submit" class="btn btn-primary btn-lg sign-up-btn" > <a href="/signup" class="btn-link">SignUp</a></button>
+        <button type="submit" class="btn btn-primary btn-lg sign-up-btn" > <a href="/signin" class="btn-link">SignIn</a> </button>
+    </div>  
+    {% endif %}
+    
+  
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+</body>
+</html>

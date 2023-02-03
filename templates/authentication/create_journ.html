@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&family=Montserrat:wght@400;500;700&family=Pacifico&family=Ubuntu:wght@700&family=Poppins&display=swap" rel="stylesheet">
+    
+    <title>Create Journey</title>
+<style>
+    body{
+        background:url('https://images.pexels.com/photos/220769/pexels-photo-220769.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
+        background-size: cover;
+    }
+    #form-container{
+        
+        background-color: rgba(255, 255, 255, 0.6);
+        margin:3rem 27rem;
+        padding:2rem 4rem;
+        font-family: 'Montserrat', sans-serif;
+        font-family: 'Montserrat Alternates', sans-serif;
+        font-weight: 700;
+        border-radius: 1rem;
+        font-size: 1.2rem;
+    }
+    .sign-in-btn{
+      border-color:#fdc886;
+      background-color: #F5AC45;
+      border-radius: 2rem;
+      color:#000;
+      display: block;
+      font-family: 'Ubuntu', sans-serif;
+      font-size: 1.2rem;
+      padding:0.5rem 3rem;
+      margin-left: 5rem;
+      margin-top: 2rem;
+  }
+  .sign-in-btn:hover{
+      background-color: #f58025;
+      border-color: #f58025;
+  }
+  
+</style>
+</head>
+<body>
+    <div class="form-div">
+        <form method="POST" action="">
+          <div id="form-container">
+            {% csrf_token %}
+              {{form.as_p}}
+<!--            <div>-->
+<!--                <label>Name: </label>-->
+<!--                <input type="text" name="pname" placeholder="Enter Name"/>-->
+<!--            </div><br>-->
+<!--            <div>-->
+<!--                <label>Source: </label>-->
+<!--                <input type="text" name="source" placeholder="Enter your source"/>-->
+<!--            </div><br>-->
+<!--            <div>-->
+<!--                <label>Destination: </label>-->
+<!--                <input type="text" name="dest" placeholder="Enter your destination"/>-->
+<!--            </div><br>-->
+<!--            <div>-->
+<!--                <label>Departure Time: </label>-->
+<!--                <input type="text" name="d_date" placeholder="Enter departure time"/>-->
+<!--            </div><br>-->
+<!--            <div>-->
+<!--                <input type="submit" value="Create"/>-->
+<!--            </div>-->
+<!--          </div>-->
+              <input type="submit" value="{{type}}"  class="btn btn-lg sign-in-btn"/>
+        </form>
+    </div>
+</body>    
+</html>

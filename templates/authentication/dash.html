@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&family=Montserrat:wght@400;500;700&family=Oleo+Script&family=Pacifico&family=Ubuntu:wght@700&family=Poppins&family=Pacifico&family=Signika+Negative:wght@600&family=Russo+One&display=swap" rel="stylesheet"> -->
+    <script src="https://kit.fontawesome.com/4e68ab7bf3.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&family=Montserrat:wght@100;400;500;700;800;900&family=Oleo+Script&family=Pacifico&family=Ubuntu:wght@700&family=Poppins&family=Pacifico&family=Signika+Negative:wght@600&family=Russo+One&family=Work+Sans:wght@300&display=swap" rel="stylesheet">
+    <title>DashBoard</title>
+
+
+    <style>
+        body{
+            /* background: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwcHBw0HBwcHBwcHBw0HBwcHBw8ICQcNFREWFhURExMYKCggGBoxJxUfITEhJSkrLi4uFx8zODMsNygtLisBCgoKDg0NDw0PDysZFRk3LTc3LTcrLTcrKy03LS0rKy0rKy0tKy0rKysrKysrKystKysrKysrKystLSsrKzctLf/AABEIALcBEwMBIgACEQEDEQH/xAAaAAEBAQADAQAAAAAAAAAAAAACAQADBAUG/8QAFhABAQEAAAAAAAAAAAAAAAAAAAER/8QAGgEBAQEBAQEBAAAAAAAAAAAAAgEABQMGBP/EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAwDAQACEQMRAD8A9yHIkhSP1V+2UoUSHIJyrCkSFBr0lWHEkKC9JVhRIUGvSVYUSFBPShRIUYaUKDCiBThQYUQaUOBCjDThQIUQThShKUrDTlLXHq6w4eroa2o2Fo2po2s2LaNrWhahSNaNrWjaxyMw6jE+YhxIUdB+KUpCiQoNekqw4kKCcqwokKDXpKsKJCg16SrCiRYJylCiQozVYcCFEE4UCFEo04sGFEEoUCFKyUpSlCLqCeroausmFraOpqNhalqaNrLi2ja1o2sUjWha1o2oUjaw6zFj5+FEhx0XOlWFEhwacqwokKDXpKsKJCiU5VixosF6SlFiQoNOVYUGFBIosSLGQoUGLGEoUFYiFFFUQtXR1tRMPW0dbWTC1tHU1FwtS0dS1lxbRta0bWWRrQta0bUORdYNZlx40ODDjo1yZVhwYcE5VhRIUSvSVYUSFBOVYsSFEOVYsSEL0lWLEijhyrCglEVYqKiEoqyEwrqIWro62oha2jrajFqaOtrLi6lqalqLjWja1o2sUjWja1o2sUjawazFjzYcGHHScSVYcGHBwpVhRIUE5VixosTDlWFEiwcekqqyocrKywcOVlRRw5VVFRVUVRFXRZmJtHW1mLW0dbUxsXU1NTUXF1LUtS1FxbRtS0bUKRbQta0bWKRtYdZix04cGHHTfPyrDgwohSlCiRYNhyrCiQohyrFiRYOHKsWIqYcqqiicrK0YbDlZUZDlVUZCVkZGVtRNRl1tTU1lXU1NS1FW1LUtS1Fa0bWtG1Cka0bWtG1DkbWHWZXDDgwo6uPmpShRIUEpVhRIUQ5VixosTClWKhDhysrMmHKrMw4cqszIcrMzDhyszImHKrIw4crMiamKupramoq6NraNrEtqWpaNqLIto2taNqE1oWraFqE2smsy60KDDjqvlZShRIUQ5VhRIUHClWLEhIUrKyocrKijhyszMhyqyMmHKqMw4crMyJhyszIOFK2oyJhyslbU1MKVqlrUamFrWpa1G1MLWtG1rRtZdaja1o2tjayhqti65IcGFHTx8tpQ4MKIWlFjRYhSrFaKmHKrMqYUrMyicqKzJhyozMhSszIOHKyMyYcrIyIcrIyVMKVqNWjRw5WqWtRrLrWpalS1C1rRta0bUxda0LVtG1sXW1h1mxtdmHAhx0nzGlDgw4xasKJCiYWrFjRUKVlZkKVmZhw5WZmQ5UZkTClZFQcOVkZEOVkZKmHKw1ko4UrWpWo2thStalrWjamFrWja1qWpi6lo1bRtbC1KNa0bUxtZh1mxdd6HAhx0nzOnCgw4haUKDCiLqwkhNhSszMOFKzMyHKiKiYcrVGQcOVkZEKVkZKmHKw1rUqHK1StRtQpWtS1rRtTCla0bVtG1MLWtG1rRtTF1rRta0bWxda0LVtC1F1tYdZsXXoxyRmdF82cOMyKcKMyEUJmZWZmQolZmSnESownGGqyU4KVmQolFmE4lS1malBtSswnBtG1mQolG1mZRtG1mQhtG1mZRtC1mRR1WZmf/2Q=="); */
+            background: url("https://images.unsplash.com/photo-1579546928686-286c9fbde1ec?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8MTJ8fHxlbnwwfHx8fA%3D%3D&w=1000&q=80");
+            background-size: cover;
+            
+            /* background: fixed; */
+           
+        }
+        .index-msg{
+                text-align:center;
+                font-family: 'Poppins', sans-serif;
+                margin:1rem 8rem 0rem 8rem;
+             
+        }
+        .home-container{
+            display: grid;
+            grid-template-columns: 1.35fr 2.65fr;
+            padding-top: 1.5rem;
+        }
+        .left-container{
+            padding:0 0.5rem 0 1rem;
+            
+        }
+        .right-container{
+            padding: 0 1rem 0 2rem; 
+            background-color: rgba(224, 94, 229, 0.251);   
+        }
+        #box{
+            color: white;
+            /* background-color: rgba(255, 255, 255, 0.6); */
+            background-image: url('https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjI2fHx0cmF2ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60');
+            
+            border: 2px solid black;
+            border-radius: 5px;
+            background-size: cover;
+            padding:0.7rem;
+        }
+        #box1{
+            padding:0 0.5rem;
+            font-family: 'Ubuntu', sans-serif;
+            font-weight:400;
+            font-size: 1.5rem;
+            
+            
+        }
+        #CRUD{
+            display: flex;
+            flex-direction: columns;
+            justify-content: space-around;
+            background-color: aliceblue;
+        }
+        .crud-text{
+            color: black;
+            font-weight: 500;
+        }
+        .search-journey{
+            margin:1rem 30rem;
+            
+        }
+        .bar{
+            border-radius: 2rem;
+            padding:0.5rem 4rem;
+            font-size: 120%;
+            font-family: 'Montserrat', sans-serif;
+            font-family: 'Montserrat Alternates', sans-serif;
+            font-weight: 500;
+        }
+        .routes-available{
+            color: rgb(0, 0, 0);
+            /* background-color: rgba(12, 11, 11, 0.507); */
+            /* font-family: 'Russo One', sans-serif; */
+            /* font-family: 'Work Sans', sans-serif; */
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 2.7rem;
+            text-decoration: underline;
+            padding:0.5rem 1rem 0.5rem 0;
+            border-radius: 1rem;
+        }
+
+        .link-content{
+            font-family: 'Ubuntu', sans-serif;
+          
+            font-weight:400;
+            font-size: 1.5rem;
+            color:rgb(0, 0, 0); 
+        }
+        .link-content:hover{
+            color: black;
+        }
+
+        .not-link-content{
+            font-family: 'Ubuntu', sans-serif;
+            font-weight:400; 
+            font-size: 2rem;  
+            padding-top: 1.5rem; 
+        }
+        
+        .schedule-link{
+            background-color: rgba(56, 5, 71, 0.507);
+            padding:1rem;
+            border-radius: 0.7rem;
+            /* color: rgb(255, 255, 255); */
+            color: rgb(255, 255, 255);
+        }
+        .schedule-link:hover{
+            /* color:rgb(0, 255, 17); */
+            /* color: rgb(236, 232, 232); */
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            text-shadow:
+                0 0 7px rgb(179, 179, 179),
+
+                0 0 10px rgb(186, 186, 186),
+                0 0 21px rgb(174, 174, 174),
+                0 0 42px rgb(192, 192, 192),
+
+                0 0 82px rgb(130, 130, 130),
+                0 0 92px rgb(148, 148, 148),
+                0 0 102px rgb(147, 147, 147),
+
+                0 0 151px rgb(130, 130, 130);
+        }
+        
+        .fa-comment-dots{
+            color:white;
+            font-size: 2rem;
+            margin:1rem 0 0 40rem;
+            position:absolute;
+            background-color: black;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+        }
+        .fa-right-from-bracket{
+            color:rgb(0, 0, 0);
+            font-size: 1.75rem;
+            margin:0.30rem 0 0 40rem;
+            position:absolute;
+            /* background-color: black; */
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+        }
+        .fa-comment-dots:hover{
+            color:black;
+            font-size: 2rem;
+            margin:1rem 0 0 40rem;
+            position:absolute;
+            background-color: rgb(255, 255, 255);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+        }
+        .chat{
+            font-family: monospace;
+            font-size: 1.8rem;
+        }
+        .signout-button{
+            position:absolute;
+            margin: 0rem 34rem ;
+            font-size: 0.25rem;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- <div class="alert alert-success alert-dismissible fade show index-msg" role="alert">
+        <strong>Hello {{fname}}!</strong> You are successfully logged in!
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div> -->
+    <a href="../signout" class="signout-button"><i class="fa-solid fa-right-from-bracket"></i></a>
+    <div class="search-journey">
+        <form action="{% url 'dash' %}" method="GET">
+            <input class="bar" type="text" name="q" placeholder="Search journeys..."/>
+        </form>
+    </div>
+    <div class="home-container">
+    <div class="left-container" >
+        <h1 class="routes-available">Routes Available</h1><hr>
+        <div id="box1" style="line-height: 24.5px;">
+        <ul>    
+        <li><a style="color:black;" href="{% url 'dash' %}">All</a></li><br>
+            {% for route in routes %}
+                <li><a class="link-content" href="{% url 'dash'%}?q={{route}}"><div>{{route}}</div></a></li><br>
+            {% endfor %}
+        </ul>    
+        </div>
+    </div>
+    
+    <div>
+        
+        <div class="right-container" >
+            <a href="../chat-home/" target='_blank'><i class="fa-solid fa-comment-dots" ><b class="chat"> Chat</b></i></a>
+            <h1 class="routes-available">Scheduled Journeys</h1>
+            {% if journey_count != 1 %}
+                <h2 class="not-link-content">{{journey_count}} journeys scheduled</h2>
+            {% else %}
+                <h2 class="not-link-content">{{journey_count}} journey scheduled</h2>
+            {% endif %}
+            <h3 style="font-family: 'Ubuntu', sans-serif; padding-bottom: 1.3rem; margin:2rem 0rem;"><a class="schedule-link" href="{% url 'create-journ' %}">Schedule a Journey</a></h3>
+        {% for journ in journeys %}
+            <div id="box">
+                <h2 style="font-family: monospace;">{{journ.source}} --> {{journ.dest}}</h2>
+                <p style="font-size: 1.2rem; font-family: monospace;">{{journ.pname}}</p>
+                <p style="font-family: monospace;">At {{journ.d_date}}</p>
+                <div id="CRUD">
+<!--                    <p>{{journ.pname}} {{fname}}</p>-->
+                    {% if journ.pname == fname %}
+                        <span><a class='crud-text' href="{% url 'delete-journ' journ.id %}">Delete</a></span>
+                        <span><a class='crud-text' href="{% url 'update-journ' journ.id %}">Update</a></span>
+                    {% endif %}
+                </div>
+            </div>
+            <br><hr>
+        {% endfor %}
+        </div>
+    </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    
+</body>
+</html>
